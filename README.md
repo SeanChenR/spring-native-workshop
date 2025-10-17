@@ -23,7 +23,7 @@ Spring Native 讓您能夠將 Spring 應用程式編譯成原生執行檔，帶�
   - 部署到 Google Cloud Run
   - 比較效能差異
 
-**[開始 Lab 1](spring-native-workshop-lab1/index.html)**
+**[開始 Lab 1](https://seanchenr.github.io/spring-native-workshop/spring-native-workshop-lab1/index.html#0)**
 
 ## 🛠️ 先決條件
 
