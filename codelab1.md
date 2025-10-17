@@ -27,6 +27,9 @@ Duration: 0:01:00
 * 已安裝 Google Cloud SDK (gcloud)
 * 已設定好 Google Cloud 專案
 
+Positive
+: 建議使用 **Google Cloud Shell** 進行本實驗！Cloud Shell 已預先安裝所有必要工具（Docker、gcloud、Java 等），可以立即開始，無需在本地環境安裝任何軟體。
+
 ## 建立 Spring Boot 專案
 Duration: 0:01:00
 
