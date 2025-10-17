@@ -14,7 +14,7 @@ Spring Native 讓您能夠將 Spring 應用程式編譯成原生執行檔，帶�
 ## 📚 實驗列表
 
 ### Lab 1: Spring Native 快速入門
-- **時間**：約 21 分鐘
+- **時間**：約 20 分鐘
 - **難度**：初級
 - **內容**：
   - 使用 Spring Initializr 建立專案
