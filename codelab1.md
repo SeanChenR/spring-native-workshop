@@ -4,6 +4,7 @@ summary: Spring Native Workshop - 學習如何建置和部署 Spring Native 應�
 categories: spring,java,native,cloud
 environments: Web
 status: Draft
+feedback link: https://seanchenr.github.io/spring-native-workshop/
 
 # Spring Native Workshop
 
