@@ -9,7 +9,7 @@ echo "=========================================="
 # 1. 安裝 Docker
 # ============================================
 echo ""
-echo "[1/4] 安裝 Docker..."
+echo "[1/6] 安裝 Docker..."
 echo "----------------------------------------"
 
 # 添加 Docker 官方 GPG key
@@ -45,10 +45,29 @@ echo "✓ Docker 安裝完成！"
 docker --version
 
 # ============================================
-# 2. 安裝 SDKMAN!
+# 2. 安裝 build-essential 編譯工具
 # ============================================
 echo ""
-echo "[2/4] 安裝 SDKMAN!..."
+echo "[2/6] 安裝 build-essential 編譯工具..."
+echo "----------------------------------------"
+
+# 安裝 build-essential (包含 gcc, g++, make 等)
+# 編譯 native image 時需要這些工具
+echo "→ 更新套件列表..."
+sudo apt-get update -qq
+
+echo "→ 安裝 build-essential 和相關開發工具..."
+sudo apt-get install -y build-essential zlib1g-dev
+
+# 驗證安裝
+echo "✓ build-essential 安裝完成！"
+gcc --version | head -n 1
+
+# ============================================
+# 3. 安裝 SDKMAN!
+# ============================================
+echo ""
+echo "[3/6] 安裝 SDKMAN!..."
 echo "----------------------------------------"
 
 # 安裝 SDKMAN! 所需的依賴套件
@@ -68,10 +87,10 @@ echo "✓ SDKMAN! 安裝完成！"
 sdk version
 
 # ============================================
-# 3. 安裝 GraalVM Java 17
+# 4. 安裝 GraalVM Java 17
 # ============================================
 echo ""
-echo "[3/4] 安裝 GraalVM Java 17..."
+echo "[4/6] 安裝 GraalVM Java 17..."
 echo "----------------------------------------"
 
 # 使用 SDKMAN! 安裝 GraalVM
@@ -87,10 +106,10 @@ echo "✓ GraalVM Java 17 安裝完成！"
 java -version
 
 # ============================================
-# 4. 安裝 Maven
+# 5. 安裝 Maven
 # ============================================
 echo ""
-echo "[4/4] 安裝 Maven..."
+echo "[5/6] 安裝 Maven..."
 echo "----------------------------------------"
 
 echo "→ 安裝 Maven 建置工具..."
@@ -100,9 +119,36 @@ echo "✓ Maven 安裝完成！"
 mvn -version
 
 # ============================================
+# 6. 產生 Maven Wrapper
+# ============================================
+echo ""
+echo "[6/6] 產生 Maven Wrapper..."
+echo "----------------------------------------"
+
+# The Maven Wrapper is an easy way to ensure a user of your Maven build
+# has everything necessary to run your Maven build.
+# 產生 Wrapper 後，其他使用者不需安裝 Maven 就能執行專案建置
+echo "→ 產生 Maven Wrapper 檔案 (mvnw / mvnw.cmd)..."
+mvn wrapper:wrapper
+
+echo "✓ Maven Wrapper 產生完成！"
+echo "  • 已產生 mvnw (Unix/Mac) 和 mvnw.cmd (Windows)"
+echo "  • 其他使用者可直接使用 ./mvnw 指令，無需安裝 Maven"
+echo "  • Wrapper 會自動下載並使用專案指定的 Maven 版本"
+
+# ============================================
 # 安裝完成
 # ============================================
 echo ""
 echo "=========================================="
 echo "✓ 所有環境安裝完成！"
+echo "=========================================="
+echo ""
+echo "已安裝的工具版本："
+echo "  • Docker:   $(docker --version | cut -d' ' -f3 | tr -d ',')"
+echo "  • GCC:      $(gcc --version | head -n 1 | awk '{print $4}')"
+echo "  • SDKMAN:   $(sdk version)"
+echo "  • Java:     $(java -version 2>&1 | head -n 1)"
+echo "  • Maven:    $(mvn -version | head -n 1 | cut -d' ' -f3)"
+echo ""
 echo "=========================================="
