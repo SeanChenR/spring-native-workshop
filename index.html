@@ -162,34 +162,37 @@
             <h2>關於此 Workshop</h2>
             <p>
                 Spring Native 讓您能夠將 Spring 應用程式編譯成原生執行檔，顯著提升啟動速度並減少記憶體使用量。
-                透過這系列實驗，您將學習如何配置、建置並部署 Spring Native 應用程式到 Google Cloud Run。
+                透過本實驗，您將建置一個圖片分析應用程式，整合 Google Cloud Vision API、Cloud Storage 和 Firestore，
+                並比較 JIT 與 Native 版本在 Google Cloud Run 上的效能差異。
             </p>
         </div>
 
         <div class="labs">
-            <h2>實驗列表</h2>
+            <h2>實驗內容</h2>
 
-            <div class="lab-card" onclick="window.location.href='spring-native-workshop-lab1/index.html'">
-                <h3>Lab 1: Spring Native 快速入門</h3>
+            <div class="lab-card" onclick="window.location.href='spring-native-workshop-lab/index.html#0'">
+                <h3>Spring Native Workshop - Image Analysis Application</h3>
                 <div class="lab-meta">
-                    <span>⏱️ 時間：約 20 分鐘</span>
-                    <span>📊 難度：初級</span>
+                    <span>⏱️ 時間：約 50 分鐘</span>
+                    <span>📊 難度：中級</span>
                 </div>
                 <p>
-                    學習如何從零開始建立 Spring Native 應用程式，配置必要的 Gradle 設定，
-                    並將應用程式部署到 Google Cloud Run。同時比較 JIT 與 Native 版本的效能差異。
+                    建置一個完整的圖片分析應用程式，學習如何使用 Maven 建置 JIT 和 Native 版本，
+                    整合 Google Cloud Vision API 進行圖片辨識，使用 Eventarc 建立事件驅動架構，
+                    並將應用程式部署到 Cloud Run。透過實際案例比較兩種版本在啟動時間、記憶體使用和映像檔大小的差異。
                 </p>
                 <div class="tags">
                     <span class="tag">Spring Boot</span>
                     <span class="tag">GraalVM</span>
-                    <span class="tag">Docker</span>
+                    <span class="tag">Maven</span>
                     <span class="tag">Cloud Run</span>
+                    <span class="tag">Vision API</span>
+                    <span class="tag">Firestore</span>
+                    <span class="tag">Eventarc</span>
                 </div>
                 <br><br>
-                <a href="spring-native-workshop-lab1/index.html" class="btn">開始實驗 →</a>
+                <a href="spring-native-workshop-lab/index.html#0" class="btn">開始實驗 →</a>
             </div>
-
-            <!-- 未來可以加入更多 Lab -->
         </div>
     </div>
 
