@@ -551,7 +551,7 @@ Duration: 0:02:00
 2. 分別點選 `my-jit-service` 和 `my-native-service`
 3. 查看「指標」標籤
 
-![Cloud Run Metrics](./images/spring-jit-vs-native.png)]
+![Cloud Run Metrics](./images/spring-jit-vs-native.png)
 
 ---
 
